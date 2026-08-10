@@ -1,0 +1,15 @@
+# Videos (not uploaded to GitHub)
+فلاشات منوعة/
+كليبات منوعة/
+متحدث القوات المسلحة/
+
+# Python
+__pycache__/
+*.pyc
+
+# Node / build
+node_modules/
+frontend/dist/
+
+# OS / editor
+.DS_Store

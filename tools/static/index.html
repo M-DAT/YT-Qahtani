@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أرشيف الشهداء — mmy.ye</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="wrap">
+  <aside id="sidebar">
+    <div class="aside-head">
+      <h1>أرشيف الشهداء</h1>
+      <div class="sub">تصفح · حدد الدقة · حمّل قائمة</div>
+      <div class="searchbox">
+        <input id="q" type="search" placeholder="ابحث: اسم، زامل، فيلم…">
+      </div>
+    </div>
+    <div class="side-tools">
+      <button class="btn ghost sm" id="allCats">الكل</button>
+      <button class="btn ghost sm" id="clearCats">مسح</button>
+      <button class="btn ghost sm" id="menuBtn2" aria-label="إغلاق الشريط الجانبي">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <span class="mini" id="selCount">0</span>
+    </div>
+    <div class="cats" id="cats"></div>
+  </aside>
+
+  <main>
+    <div class="toolbar">
+      <button class="btn ghost" id="plOpen">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        مركز التنزيلات <span id="plCount">0</span>
+      </button>
+      <button class="btn ghost" id="menuBtn" aria-label="فتح الشريط الجانبي">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="vertical-align:-3px"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        التصنيفات
+      </button>
+      <span class="res" id="res"></span>
+    </div>
+    <div class="grid" id="grid"><div class="empty">جارِ التحميل…</div></div>
+    <div class="loadmore"><button class="btn ghost" id="moreBtn">عرض المزيد</button></div>
+  </main>
+</div>
+
+<div class="overlay" id="ov"></div>
+<div class="modal" id="dlModal" role="dialog" aria-modal="true" aria-labelledby="dlTitle">
+  <div class="modal-head">
+    <h2 id="dlTitle">مركز التنزيلات <span class="mcount" id="mcount">0</span></h2>
+    <div class="modal-tools">
+      <label class="mini">الدقة:
+        <select id="globalQ">
+          <option value="best">الأفضل</option>
+          <option>1080p</option><option>720p</option><option>480p</option>
+          <option>360p</option><option>240p</option><option>144p</option>
+        </select>
+      </label>
+      <button class="btn bump" id="dlGo">بدء التحميل</button>
+      <button class="btn ghost sm" id="dlClose" aria-label="إغلاق">✕</button>
+    </div>
+  </div>
+  <div class="modal-body" id="plist"></div>
+  <div class="modal-foot">
+    <button class="btn ghost sm" id="dlClear">تفريغ المكتمل</button>
+    <span class="dlsum" id="dlSum">بدون عناصر</span>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
