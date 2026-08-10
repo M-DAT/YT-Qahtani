@@ -1,9 +1,9 @@
 """_runner_ — download the martyr-story documentaries, organised per martyr.
 
 Usage:
-    python3 tools/runner.py --dry-run    # print plan only
-    python3 tools/runner.py              # download any missing files (resumable)
-    python3 tools/runner.py --finalize   # refresh summary.json / README.txt only
+    python3 backend/runner.py --dry-run  # print plan only
+    python3 backend/runner.py            # download any missing files (resumable)
+    python3 backend/runner.py --finalize # refresh summary.json / README.txt only
 """
 import json
 import os
@@ -252,7 +252,7 @@ def write_readme(summary):
         "Best quality used : %s" % summary.get("highest_quality_used", "?"),
         "",
         "To resume any interrupted download, run:",
-        "   python3 tools/runner.py",
+        "   python3 backend/runner.py",
         "",
         "The tool respects the site: single session, polite delays and retries.",
     ]
@@ -320,7 +320,7 @@ def enrich_descriptions(catalog):
 def main():
     catalog = load_json(CATALOG_PATH, {"stories": []})
     if not catalog.get("stories"):
-        print("Catalog empty. Run tools/discover.py first.")
+        print("Catalog empty. Run backend/discover.py first.")
 
     if "--finalize" in sys.argv:
         plan = group_stories(catalog)

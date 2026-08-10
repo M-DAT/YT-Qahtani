@@ -8,7 +8,7 @@ Features:
   * playlist queue with background downloads, resume and progress
 
 Usage:
-    python3 tools/web.py [--port 8080]     # then open http://127.0.0.1:8080
+    python3 backend/web.py [--port 8080]   # then open http://127.0.0.1:8080
 """
 import html
 import json
